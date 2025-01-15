@@ -10,42 +10,45 @@
 // - Utilizza la classe Random per generare numeri casuali.
 // - Per stampare la matrice, usa un ciclo annidato.
 
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        // Creazione e popolamento della matrice
-        int[][] matrix = new int[3][3];
+        // popolamento matrice
+        int[][] m = new int[3][3];
         Random random = new Random();
-        // COMPLETARE IL CODICE
+        
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                m[i][j] = random.nextInt(100) + 1;        }    }
 
-      
-
-        // Stampa della matrice
+        // output della matrice
         System.out.println("Matrice:");
-        // COMPLETARE IL CODICE
-
-
-        // Calcolo della somma degli elementi
-        int sum = calculateSum(matrix);
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                System.out.print(m[i][j] + " ");       }
+            System.out.println(); // a capo alla fine di ogni riga      }
+        // calcolo somma di elementi
+        int sum = calculateSum(m);
         System.out.println("Somma degli elementi: " + sum);
 
-        // Ricerca del valore massimo
-        int max = findMax(matrix);
-        System.out.println("Valore massimo: " + max);
-    }
+        // ricerca del valore massimo
+        int maxim = findMax(m);
+        System.out.println("Valore massimo: " + maxim);}}
 
-    public static int calculateSum(int[][] matrix) {
+    public static int calculateSum(int[][] m) {
         int sum = 0;
-   
-// COMPLETARE IL CODICE
-      
-        return sum;
-    }
+        // somma di tutti gli elementi della matrice
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                sum += m[i][j];         }   }
+        return sum; }
 
-    public static int findMax(int[][] matrix) {
-        int max = matrix[0][0];
-
-// COMPLETARE IL CODICE
-      
-        return max;
-    }
-}
+    public static int findMax(int[][] m) {
+        int maxim = m[0][0];
+        // trova il valore massimo nella matrice
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                if (m[i][j] > maxim) {
+                    maxim = m[i][j];  }}}
+        return maxim;  }}
